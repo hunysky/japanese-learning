@@ -1,0 +1,44 @@
+.ttsBtn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: transform 0.2s, background-color 0.2s;
+    padding: 0;
+}
+
+.ttsBtn:hover:not(:disabled) {
+    transform: scale(1.1);
+    background-color: var(--color-hover);
+}
+
+.sm {
+    font-size: 1rem;
+    width: 24px;
+    height: 24px;
+}
+
+.md {
+    font-size: 1.5rem;
+    width: 36px;
+    height: 36px;
+}
+
+.speaking {
+    opacity: 0.5;
+    cursor: not-allowed;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+}

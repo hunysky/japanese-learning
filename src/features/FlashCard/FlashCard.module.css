@@ -1,0 +1,88 @@
+.scene {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 3 / 4;
+    perspective: 1000px;
+    margin: 0 auto 2rem auto;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    border-radius: 12px;
+}
+
+.isFlipped {
+    transform: rotateY(180deg);
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.front {
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-border);
+}
+
+.front:hover {
+    border-color: var(--color-red);
+}
+
+.back {
+    background-color: var(--color-ink);
+    color: #fff;
+    transform: rotateY(180deg);
+}
+
+/* Typography styles */
+.char {
+    font-family: var(--font-jp);
+    font-size: 5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.hint {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+}
+
+.backMain {
+    font-family: var(--font-jp);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.romaji {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    color: var(--color-gold);
+}
+
+.korean {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+}
+
+.ttsWrapper {
+    margin-top: auto;
+    pointer-events: auto;
+    /* TTS 버튼 클릭을 위해 */
+}

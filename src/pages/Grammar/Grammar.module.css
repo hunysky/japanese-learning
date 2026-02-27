@@ -1,0 +1,106 @@
+.page {
+    animation: fadeIn 0.3s ease;
+}
+
+.header {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--color-ink);
+    padding-bottom: 1rem;
+}
+
+.title {
+    font-size: 2rem;
+    margin: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.title span {
+    font-size: 1rem;
+    color: var(--color-muted);
+    font-weight: normal;
+}
+
+.patternList {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.patternCard {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.patternHeader {
+    background-color: var(--color-ink);
+    color: #fff;
+    padding: 1.5rem;
+}
+
+.patternTitle {
+    font-family: var(--font-jp);
+    font-size: 1.8rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.explanation {
+    margin: 0;
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+.examples {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.exampleRow {
+    background-color: var(--color-bg);
+    padding: 1rem;
+    border-radius: var(--radius);
+    border-left: 4px solid var(--color-gold);
+}
+
+.exampleHeader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.japanese {
+    font-family: var(--font-jp);
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--color-ink);
+}
+
+.romaji {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    margin-bottom: 0.5rem;
+}
+
+.korean {
+    font-size: 1.1rem;
+    color: var(--color-ink);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

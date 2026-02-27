@@ -1,0 +1,149 @@
+.quizWrapper {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.modeToggle {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.progress {
+    font-size: 1.1rem;
+    color: var(--color-muted);
+    margin-bottom: 1rem;
+}
+
+.questionBox {
+    margin-bottom: 2rem;
+}
+
+.questionHint {
+    font-size: 2.5rem;
+    font-family: var(--font-jp);
+    background-color: var(--color-surface);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.choicesGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.choiceBtn {
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-border);
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: var(--font-jp);
+}
+
+.choiceBtn:hover:not(:disabled) {
+    background-color: var(--color-hover);
+    border-color: var(--color-gold);
+}
+
+.choiceBtn:disabled {
+    cursor: default;
+}
+
+.choiceBtn.correct {
+    background-color: #E8F5E9;
+    border-color: #4CAF50;
+    color: #2E7D32;
+}
+
+.choiceBtn.wrong {
+    background-color: #FFEBEE;
+    border-color: var(--color-red);
+    color: var(--color-red);
+}
+
+.feedback {
+    font-size: 1.2rem;
+    font-weight: bold;
+    animation: fadeIn 0.3s ease;
+}
+
+.feedbackCorrect {
+    color: #2E7D32;
+}
+
+.feedbackWrong {
+    color: var(--color-red);
+}
+
+.resultContainer {
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: var(--color-surface);
+    padding: 3rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.resultTitle {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.score {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--color-red);
+    margin-bottom: 2rem;
+}
+
+.wrongArea {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.wrongTitle {
+    color: var(--color-muted);
+    margin-bottom: 0.5rem;
+}
+
+.wrongList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.wrongItem {
+    background-color: var(--color-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-family: var(--font-jp);
+    font-size: 1.2rem;
+    border: 1px solid var(--color-red);
+    color: var(--color-red);
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
