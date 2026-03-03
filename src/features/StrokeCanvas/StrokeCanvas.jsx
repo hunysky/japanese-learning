@@ -141,8 +141,8 @@ export default function StrokeCanvas({ data }) {
             <div className={styles.drawingArea}>
                 <canvas
                     ref={canvasRef}
-                    width={300}
-                    height={300}
+                    width={240}
+                    height={240}
                     className={styles.canvas}
                     onMouseDown={startDrawing}
                     onMouseMove={draw}
