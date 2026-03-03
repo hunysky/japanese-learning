@@ -29,17 +29,28 @@
     box-shadow: var(--shadow);
 }
 
+.referenceHeader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
 .referenceChar {
     font-family: var(--font-jp);
     font-size: 6rem;
     color: var(--color-ink);
     line-height: 1;
-    margin-bottom: 1rem;
 }
 
 .strokesInfo {
     font-size: 1.2rem;
     color: var(--color-muted);
+}
+
+.drawnStrokesCount {
+    font-weight: 600;
+    color: var(--color-primary);
 }
 
 .drawingArea {

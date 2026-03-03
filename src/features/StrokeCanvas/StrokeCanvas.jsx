@@ -1,13 +1,26 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Button from '../../components/common/Button/Button';
+import TtsButton from '../../components/common/TtsButton/TtsButton';
+import { useTts } from '../../hooks/useTts';
 import styles from './StrokeCanvas.module.css';
 
 export default function StrokeCanvas({ data }) {
     const canvasRef = useRef(null);
     const [isDrawing, setIsDrawing] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [drawnStrokes, setDrawnStrokes] = useState(0);
+    const progressTimeoutRef = useRef(null);
+
+    const { speak } = useTts();
 
     const currentItem = data[currentIndex] || data[0];
+
+    // Play TTS when character changes
+    useEffect(() => {
+        if (currentItem?.char) {
+            speak(currentItem.char);
+        }
+    }, [currentIndex, currentItem, speak]);
 
     useEffect(() => {
         // Stop scrolling on mobile when touching the canvas
@@ -24,6 +37,9 @@ export default function StrokeCanvas({ data }) {
         return () => {
             canvas.removeEventListener('touchstart', preventTouchScroll);
             canvas.removeEventListener('touchmove', preventTouchScroll);
+            if (progressTimeoutRef.current) {
+                clearTimeout(progressTimeoutRef.current);
+            }
         };
     }, []);
 
@@ -59,6 +75,10 @@ export default function StrokeCanvas({ data }) {
         ctx.beginPath();
         ctx.moveTo(coords.x, coords.y);
         setIsDrawing(true);
+
+        if (progressTimeoutRef.current) {
+            clearTimeout(progressTimeoutRef.current);
+        }
     };
 
     const draw = (e) => {
@@ -76,7 +96,17 @@ export default function StrokeCanvas({ data }) {
     };
 
     const endDrawing = () => {
+        if (!isDrawing) return;
         setIsDrawing(false);
+
+        const newDrawnStrokes = drawnStrokes + 1;
+        setDrawnStrokes(newDrawnStrokes);
+
+        if (currentItem?.strokes && newDrawnStrokes >= currentItem.strokes) {
+            progressTimeoutRef.current = setTimeout(() => {
+                nextCharacter();
+            }, 800);
+        }
     };
 
     const clearCanvas = () => {
@@ -87,7 +117,8 @@ export default function StrokeCanvas({ data }) {
     };
 
     const nextCharacter = () => {
-        setCurrentIndex((currentIndex + 1) % data.length);
+        setCurrentIndex((prev) => (prev + 1) % data.length);
+        setDrawnStrokes(0);
         clearCanvas();
     };
 
@@ -96,9 +127,14 @@ export default function StrokeCanvas({ data }) {
     return (
         <div className={styles.container}>
             <div className={styles.reference}>
-                <div className={styles.referenceChar}>{currentItem.char}</div>
+                <div className={styles.referenceHeader}>
+                    <div className={styles.referenceChar}>{currentItem.char}</div>
+                    <TtsButton text={currentItem.char} size="md" />
+                </div>
                 {currentItem.strokes && (
-                    <div className={styles.strokesInfo}>획수: {currentItem.strokes}획</div>
+                    <div className={styles.strokesInfo}>
+                        획수: <span className={styles.drawnStrokesCount}>{drawnStrokes}</span> / {currentItem.strokes}획
+                    </div>
                 )}
             </div>
 
