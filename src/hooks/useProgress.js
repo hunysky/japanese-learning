@@ -1,8 +1,9 @@
+import { useCallback } from 'react';
 import { supabase } from '../lib/supabase';
 
 export function useProgress() {
 
-    const saveFlashcardPos = async (section, position) => {
+    const saveFlashcardPos = useCallback(async (section, position) => {
         try {
             if (!supabase) return;
             await supabase
@@ -11,9 +12,9 @@ export function useProgress() {
         } catch (e) {
             console.error('Error saving flashcard position:', e);
         }
-    };
+    }, []);
 
-    const getFlashcardPos = async (section) => {
+    const getFlashcardPos = useCallback(async (section) => {
         try {
             if (!supabase) return 0;
             const { data } = await supabase
@@ -25,9 +26,9 @@ export function useProgress() {
         } catch (e) {
             return 0;
         }
-    };
+    }, []);
 
-    const saveQuizScore = async (section, score, total = 10) => {
+    const saveQuizScore = useCallback(async (section, score, total = 10) => {
         try {
             if (!supabase) return;
             await supabase
@@ -36,9 +37,9 @@ export function useProgress() {
         } catch (e) {
             console.error('Error saving quiz score:', e);
         }
-    };
+    }, []);
 
-    const saveWrongAnswer = async (section, character) => {
+    const saveWrongAnswer = useCallback(async (section, character) => {
         try {
             if (!supabase) return;
 
@@ -60,9 +61,9 @@ export function useProgress() {
         } catch (e) {
             console.error('Error saving wrong answer:', e);
         }
-    };
+    }, []);
 
-    const getWrongAnswers = async (section) => {
+    const getWrongAnswers = useCallback(async (section) => {
         try {
             if (!supabase) return [];
             const { data } = await supabase
@@ -74,7 +75,7 @@ export function useProgress() {
         } catch (e) {
             return [];
         }
-    };
+    }, []);
 
     return {
         saveFlashcardPos,

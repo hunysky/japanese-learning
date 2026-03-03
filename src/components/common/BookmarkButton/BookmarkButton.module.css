@@ -1,0 +1,33 @@
+.btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+    color: var(--color-muted);
+    line-height: 1;
+    padding: 0.2rem;
+}
+
+.btn:hover {
+    transform: scale(1.2);
+}
+
+.btn:active {
+    transform: scale(0.9);
+}
+
+.active {
+    color: var(--color-gold);
+}
+
+.sm {
+    font-size: 1rem;
+}
+
+.md {
+    font-size: 1.3rem;
+}
+
+.lg {
+    font-size: 1.6rem;
+}

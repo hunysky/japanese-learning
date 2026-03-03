@@ -1,0 +1,16 @@
+{
+  "name": "일본어 학습 도우미",
+  "short_name": "日本語학습",
+  "description": "초급자를 위한 가장 쉬운 일본어 시작",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F5F0",
+  "theme_color": "#1C1A14",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

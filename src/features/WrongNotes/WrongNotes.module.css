@@ -1,0 +1,104 @@
+.loading {
+    text-align: center;
+    color: var(--color-muted);
+    padding: 3rem 0;
+}
+
+.empty {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--color-muted);
+}
+
+.emptyIcon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.emptyHint {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.container {
+    animation: fadeIn 0.3s ease;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.title {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.title span {
+    font-weight: normal;
+    color: var(--color-muted);
+    font-size: 1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 0.75rem;
+}
+
+.card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.char {
+    font-family: var(--font-jp);
+    font-size: 2rem;
+    color: var(--color-ink);
+    line-height: 1.2;
+}
+
+.romaji {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    margin-top: 0.25rem;
+}
+
+.korean {
+    font-size: 0.8rem;
+    color: var(--color-muted);
+}
+
+.wrongCount {
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    font-size: 0.7rem;
+    color: var(--color-red);
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

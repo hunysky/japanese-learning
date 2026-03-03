@@ -1,0 +1,157 @@
+.container {
+    animation: fadeIn 0.3s ease;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.progress {
+    text-align: center;
+    color: var(--color-muted);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.dueCount {
+    margin-left: 0.5rem;
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+.card {
+    background: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.card:hover {
+    border-color: var(--color-ink);
+}
+
+.charMain {
+    font-family: var(--font-jp);
+    font-size: 5rem;
+    line-height: 1;
+    color: var(--color-ink);
+    margin-bottom: 1rem;
+}
+
+.tapHint {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+}
+
+.answer {
+    animation: fadeIn 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.answerRomaji {
+    font-size: 1.5rem;
+    color: var(--color-ink);
+    font-weight: 500;
+}
+
+.answerKorean {
+    font-size: 1.2rem;
+    color: var(--color-muted);
+    margin-bottom: 0.5rem;
+}
+
+.ratingButtons {
+    animation: fadeIn 0.3s ease;
+}
+
+.rateLabel {
+    text-align: center;
+    color: var(--color-muted);
+    margin: 0 0 1rem 0;
+    font-size: 0.95rem;
+}
+
+.rateGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+.rateBtn {
+    padding: 0.75rem 0.5rem;
+    border: 2px solid var(--color-border);
+    border-radius: 10px;
+    background: var(--color-surface);
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    color: var(--color-ink);
+    font-family: var(--font-ui);
+}
+
+.rateBtn:hover {
+    transform: translateY(-2px);
+}
+
+.rateFail:hover {
+    border-color: var(--color-red);
+    background: rgba(197, 52, 42, 0.05);
+}
+
+.rateHard:hover {
+    border-color: #e67e22;
+    background: rgba(230, 126, 34, 0.05);
+}
+
+.rateGood:hover {
+    border-color: var(--color-gold);
+    background: rgba(184, 150, 46, 0.05);
+}
+
+.rateEasy:hover {
+    border-color: #2d9d3f;
+    background: rgba(45, 157, 63, 0.05);
+}
+
+/* Complete */
+.complete {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.completeIcon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.complete h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+}
+
+.completeInfo {
+    color: var(--color-muted);
+    margin-bottom: 2rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

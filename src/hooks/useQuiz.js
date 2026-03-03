@@ -8,10 +8,10 @@ export function useQuiz(data, mode = 'char-to-romaji') {
     const [wrongList, setWrongList] = useState([]);
     const [isFinished, setIsFinished] = useState(false);
 
-    const totalQuestions = 10;
+    const totalQuestions = Math.min(10, data.length);
 
     const initQuiz = useCallback(() => {
-        // 1. Pick 10 random items
+        // 1. Pick random items
         const shuffledData = shuffle(data);
         const selected = shuffledData.slice(0, totalQuestions);
 
@@ -38,14 +38,15 @@ export function useQuiz(data, mode = 'char-to-romaji') {
         setScore(0);
         setWrongList([]);
         setIsFinished(false);
-    }, [data, mode]);
+    }, [data, mode, totalQuestions]);
 
     useEffect(() => {
         initQuiz();
     }, [initQuiz]);
 
-    const selectAnswer = (choice) => {
+    const selectAnswer = useCallback((choice) => {
         const currentQ = questions[currentIndex];
+        if (!currentQ) return;
         const isCorrect = choice === currentQ.answer;
 
         if (isCorrect) {
@@ -53,15 +54,15 @@ export function useQuiz(data, mode = 'char-to-romaji') {
         } else {
             setWrongList(prev => [...prev, currentQ.item]);
         }
-    };
+    }, [questions, currentIndex]);
 
-    const nextQuestion = () => {
+    const nextQuestion = useCallback(() => {
         if (currentIndex + 1 >= totalQuestions) {
             setIsFinished(true);
         } else {
             setCurrentIndex(i => i + 1);
         }
-    };
+    }, [currentIndex, totalQuestions]);
 
     return {
         currentQuestion: questions[currentIndex],

@@ -22,6 +22,12 @@
     font-weight: normal;
 }
 
+.viewToggle {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
 .patternList {
     display: flex;
     flex-direction: column;

@@ -1,18 +1,30 @@
 :root {
-  --color-bg:       #F7F5F0;
-  --color-surface:  #FFFFFF;
-  --color-ink:      #1C1A14;
-  --color-red:      #C5342A;
-  --color-gold:     #B8962E;
-  --color-muted:    #8A8680;
-  --color-border:   #DDD9D0;
-  --color-hover:    #F0EDE6;
+  --color-bg: #F7F5F0;
+  --color-surface: #FFFFFF;
+  --color-ink: #1C1A14;
+  --color-red: #C5342A;
+  --color-gold: #B8962E;
+  --color-muted: #8A8680;
+  --color-border: #DDD9D0;
+  --color-hover: #F0EDE6;
 
-  --font-jp:  'Noto Serif JP', serif;
-  --font-ui:  'Noto Sans KR', sans-serif;
+  --font-jp: 'Noto Serif JP', serif;
+  --font-ui: 'Noto Sans KR', sans-serif;
 
-  --radius:   4px;
-  --shadow:   0 2px 12px rgba(0,0,0,0.07);
+  --radius: 4px;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="dark"] {
+  --color-bg: #1a1a1e;
+  --color-surface: #2a2a2e;
+  --color-ink: #e8e6e1;
+  --color-red: #e05549;
+  --color-gold: #d4ad3c;
+  --color-muted: #9a9690;
+  --color-border: #3d3d42;
+  --color-hover: #33333a;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
 }
 
 body {
@@ -21,6 +33,7 @@ body {
   background-color: var(--color-bg);
   color: var(--color-ink);
   font-family: var(--font-ui);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 * {

@@ -22,6 +22,19 @@
     font-weight: normal;
 }
 
+.filterTabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+    scrollbar-width: none;
+}
+
+.filterTabs::-webkit-scrollbar {
+    display: none;
+}
+
 .tabs {
     display: flex;
     gap: 0.5rem;
@@ -55,6 +68,13 @@
 .flashcardCount {
     font-size: 1rem;
     color: var(--color-muted);
+}
+
+.emptyMessage {
+    text-align: center;
+    color: var(--color-muted);
+    padding: 3rem 1rem;
+    font-size: 1rem;
 }
 
 @keyframes fadeIn {

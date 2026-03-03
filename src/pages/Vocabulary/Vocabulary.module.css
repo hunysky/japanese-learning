@@ -72,6 +72,12 @@
     margin-bottom: 0.5rem;
 }
 
+.wordActions {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
 .japanese {
     font-family: var(--font-jp);
     font-size: 1.8rem;
@@ -111,6 +117,13 @@
 .flashcardCount {
     font-size: 1rem;
     color: var(--color-muted);
+}
+
+.noResults {
+    text-align: center;
+    color: var(--color-muted);
+    padding: 2rem 1rem;
+    grid-column: 1 / -1;
 }
 
 @keyframes fadeIn {
