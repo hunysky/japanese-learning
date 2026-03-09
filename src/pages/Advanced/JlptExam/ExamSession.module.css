@@ -1,0 +1,253 @@
+.sessionLayout {
+    display: flex;
+    gap: 2rem;
+    height: calc(100vh - 120px);
+    max-height: 800px;
+}
+
+.sidebar {
+    width: 250px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.timerBox {
+    background: var(--bg-hover);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.timerLabel {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.3rem;
+}
+
+.timerValue {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-primary);
+    font-variant-numeric: tabular-nums;
+}
+
+.timerUrgent {
+    color: #f44336;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.5;
+    }
+}
+
+.omrContainer {
+    flex: 1;
+}
+
+.omrSection {
+    margin-bottom: 1.5rem;
+}
+
+.omrSectionTitle {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--text-primary);
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+}
+
+.omrGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+}
+
+.omrBtn {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.omrBtn:hover {
+    border-color: var(--primary-color);
+}
+
+.omrAnswered {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.omrCurrent {
+    outline: 2px solid #ff9800;
+    outline-offset: 2px;
+}
+
+.submitBtn {
+    margin-top: auto;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.exitBtn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+}
+
+.exitBtn:hover {
+    color: #f44336;
+}
+
+/* Main Area */
+.mainArea {
+    flex: 1;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.questionHeader {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--bg-hover);
+    padding-bottom: 1rem;
+}
+
+.qNum {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-right: 0.8rem;
+}
+
+.qInstruction {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.passageBox {
+    background: var(--bg-hover);
+    padding: 1.5rem;
+    border-radius: 8px;
+    line-height: 1.8;
+    color: var(--text-primary);
+    white-space: pre-wrap;
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+}
+
+.questionText {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.optionsList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: auto;
+    /* Push nav buttons to bottom */
+}
+
+.optionBtn {
+    text-align: left;
+    padding: 1.2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.optNum {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid currentColor;
+    margin-right: 1rem;
+    font-size: 0.9rem;
+}
+
+.optionBtn:hover {
+    background: var(--bg-hover);
+    border-color: var(--primary-color);
+}
+
+.optionBtn.selected {
+    background: rgba(var(--primary-rgb), 0.1);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.optionBtn.selected .optNum {
+    background: var(--primary-color);
+    color: white;
+}
+
+.navButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--bg-hover);
+}
+
+@media (max-width: 800px) {
+    .sessionLayout {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .omrContainer {
+        display: none;
+        /* Hide OMR on small screens to save space */
+    }
+}

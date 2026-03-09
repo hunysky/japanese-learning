@@ -13,6 +13,7 @@ export default function Navbar() {
                 <NavLink to="/katakana" className={({ isActive }) => isActive ? styles.active : ''}>가타</NavLink>
                 <NavLink to="/vocabulary" className={({ isActive }) => isActive ? styles.active : ''}>단어</NavLink>
                 <NavLink to="/grammar" className={({ isActive }) => isActive ? styles.active : ''}>문법</NavLink>
+                <NavLink to="/advanced" className={({ isActive }) => isActive ? styles.active : ''}>상급</NavLink>
                 <NavLink to="/dashboard" className={({ isActive }) => isActive ? styles.active : ''}>현황</NavLink>
                 <NavLink to="/bookmarks" className={({ isActive }) => isActive ? styles.active : ''}>★</NavLink>
             </div>

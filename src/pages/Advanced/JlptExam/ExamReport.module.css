@@ -1,0 +1,207 @@
+.reportLayout {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.title {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.statusBadge {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.summaryGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.summaryCard {
+    background: var(--bg-hover);
+    padding: 2rem 1rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.cardLabel {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.cardValue {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    font-weight: bold;
+}
+
+.scoreText {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.detailsSection {
+    margin-bottom: 3rem;
+}
+
+.sectionTitle {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--bg-hover);
+    padding-bottom: 1rem;
+}
+
+.explanationList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.explainCard {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-left: 5px solid #4caf50;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.explainWrong {
+    border-left-color: #f44336;
+}
+
+.explainHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.exMeta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.exSection {
+    background: var(--bg-hover);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.exQnum {
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.exBadge {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.badgeCorrect {
+    background: rgba(76, 175, 80, 0.1);
+    color: #4caf50;
+}
+
+.badgeWrong {
+    background: rgba(244, 67, 54, 0.1);
+    color: #f44336;
+}
+
+.exPassage {
+    background: var(--bg-hover);
+    padding: 1rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.passageExpand {
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}
+
+.exText {
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.userCompare {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    background: var(--bg-hover);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.compareItem {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.compareLabel {
+    color: var(--text-secondary);
+}
+
+.compareValue {
+    color: var(--text-primary);
+}
+
+.exExplanation {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border-color);
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.exLabel {
+    font-weight: bold;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.actions {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+@media (max-width: 600px) {
+    .summaryGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .reportLayout {
+        padding: 1rem;
+    }
+}

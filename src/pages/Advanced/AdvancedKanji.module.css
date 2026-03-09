@@ -1,0 +1,132 @@
+.page {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+}
+
+.tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.kanjiGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.kanjiCard {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.kanjiCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.kanjiHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.kanjiChar {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.kanjiMeaning {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-top: 0.5rem;
+}
+
+.readings {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.readingGroup {
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+}
+
+.readingLabel {
+    font-size: 0.8rem;
+    background: var(--bg-hover);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    color: var(--text-secondary);
+}
+
+.readingText {
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.examples {
+    margin-top: 1rem;
+}
+
+.examplesTitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.exampleItem {
+    display: grid;
+    grid-template-columns: 2fr 3fr 3fr;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.exampleItem:last-child {
+    border-bottom: none;
+}
+
+.exWord {
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.exReading {
+    color: var(--primary-color);
+}
+
+.exMeaning {
+    color: var(--text-secondary);
+}
+
+@media (max-width: 600px) {
+    .page {
+        padding: 1rem;
+    }
+}

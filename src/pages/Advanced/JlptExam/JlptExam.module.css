@@ -1,0 +1,77 @@
+.examContainer {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.introBox {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.2rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.infoGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    background: var(--bg-hover);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.infoItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.infoLabel {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+.infoValue {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.warningBox {
+    border-left: 4px solid #ff9800;
+    background: rgba(255, 152, 0, 0.1);
+    padding: 1rem;
+    text-align: left;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+@media (max-width: 600px) {
+    .infoGrid {
+        grid-template-columns: 1fr;
+    }
+}

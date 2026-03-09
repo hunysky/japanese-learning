@@ -1,0 +1,113 @@
+.page {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+}
+
+.grammarList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.grammarCard {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.grammarCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pattern {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.explanation {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.nuanceBox {
+    background: var(--bg-hover);
+    border-left: 4px solid var(--primary-color);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.nuanceTitle {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+.nuanceText {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.examples {
+    border-top: 1px dashed var(--border-color);
+    padding-top: 1rem;
+}
+
+.examplesTitle {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-primary);
+    margin-bottom: 0.8rem;
+}
+
+.exampleItem {
+    margin-bottom: 1rem;
+}
+
+.exampleItem:last-child {
+    margin-bottom: 0;
+}
+
+.japanese {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 0.2rem;
+}
+
+.romaji {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.2rem;
+}
+
+.korean {
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+@media (max-width: 600px) {
+    .page {
+        padding: 1rem;
+    }
+}
